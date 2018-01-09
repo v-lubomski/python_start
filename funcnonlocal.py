@@ -1,12 +1,15 @@
-x = 50
+x = 'from global'
 def funcOuter():
-	x = 2
-	print('x equal', x)
+	nonlocal x
+	print('to funcOuter', x) 
+	x = 'from funcOuter'
 
 	def funcInner():
-		x = 5
+		nonlocal x
+		print('to funcInner', x)
+		x = 'from funcInner'
 
-	funcInner()
-	print('local x now is', x)
-
-funcOuter()
+		def funcDNO():
+			nonlocal x
+                	print('to funcDNO', x)
+                	x = 'from funcDNO'

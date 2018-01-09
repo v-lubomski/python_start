@@ -13,3 +13,5 @@ def funcOuter():
 			nonlocal x
                 	print('to funcDNO', x)
                 	x = 'from funcDNO'
+
+#проверить работу функций внутри функций
